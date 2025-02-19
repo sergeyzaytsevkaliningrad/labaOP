@@ -1,0 +1,15 @@
+services:
+  nginx:
+    build:
+      context: ./nginx
+    container_name: proxy
+    ports:
+      - "80:80"
+    depends_on:
+      - backend
+
+  backend:
+    build:
+      context: ./backend
+    container_name: backend
+
